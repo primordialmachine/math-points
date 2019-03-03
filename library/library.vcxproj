@@ -24,7 +24,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="includes\primordialmachine\math\points\equal_to_point_point.hpp" />
     <ClInclude Include="includes\primordialmachine\math\points\include.hpp" />
+    <ClInclude Include="includes\primordialmachine\math\points\not_equal_to_point_point.hpp" />
     <ClInclude Include="includes\primordialmachine\math\points\point.hpp" />
     <ClInclude Include="includes\primordialmachine\math\points\point_default_implementation.hpp" />
   </ItemGroup>
@@ -90,26 +92,26 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)products\$(ProjectName)\$(PlatformTarget.toLower())\$(Configuration.toLower())\</OutDir>
-    <IntDir>$(SolutionDir)intermediates\$(ProjectName)\$(PlatformTarget.toLower())\$(Configuration.toLower())\</IntDir>
+    <OutDir>$(BuildDir)products\$(ProjectName)\$(PlatformTarget.toLower())\$(Configuration.toLower())\</OutDir>
+    <IntDir>$(BuildDir)intermediates\$(ProjectName)\$(PlatformTarget.toLower())\$(Configuration.toLower())\</IntDir>
     <TargetName>$(PackageName)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)products\$(ProjectName)\$(PlatformTarget.toLower())\$(Configuration.toLower())\</OutDir>
-    <IntDir>$(SolutionDir)intermediates\$(ProjectName)\$(PlatformTarget.toLower())\$(Configuration.toLower())\</IntDir>
+    <OutDir>$(BuildDir)products\$(ProjectName)\$(PlatformTarget.toLower())\$(Configuration.toLower())\</OutDir>
+    <IntDir>$(BuildDir)intermediates\$(ProjectName)\$(PlatformTarget.toLower())\$(Configuration.toLower())\</IntDir>
     <TargetName>$(PackageName)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)products\$(ProjectName)\$(PlatformTarget.toLower())\$(Configuration.toLower())\</OutDir>
-    <IntDir>$(SolutionDir)intermediates\$(ProjectName)\$(PlatformTarget.toLower())\$(Configuration.toLower())\</IntDir>
+    <OutDir>$(BuildDir)products\$(ProjectName)\$(PlatformTarget.toLower())\$(Configuration.toLower())\</OutDir>
+    <IntDir>$(BuildDir)intermediates\$(ProjectName)\$(PlatformTarget.toLower())\$(Configuration.toLower())\</IntDir>
     <TargetName>$(PackageName)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IntDir>$(SolutionDir)intermediates\$(ProjectName)\$(PlatformTarget.toLower())\$(Configuration.toLower())\</IntDir>
-    <OutDir>$(SolutionDir)products\$(ProjectName)\$(PlatformTarget.toLower())\$(Configuration.toLower())\</OutDir>
+    <IntDir>$(BuildDir)intermediates\$(ProjectName)\$(PlatformTarget.toLower())\$(Configuration.toLower())\</IntDir>
+    <OutDir>$(BuildDir)products\$(ProjectName)\$(PlatformTarget.toLower())\$(Configuration.toLower())\</OutDir>
     <TargetName>$(PackageName)</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -145,8 +147,8 @@
       <Command>xcopy $(ProjectDir)includes $(PackageDir)includes\ /S /E /Y
 xcopy $(OutDir)*.lib $(PackageDir)libraries\ /S /E /Y</Command>
       <Message>Create package.</Message>
-      <Outputs>$(PackageDir)includes\primordialmachine\math\points\include.hpp;$(PackageDir)includes\primordialmachine\math\points\point.hpp;$(PackageDir)includes\primordialmachine\math\points\point_default_implementation.hpp</Outputs>
-      <Inputs>$(ProjectDir)includes\primordialmachine\math\points\include.hpp;$(ProjectDir)includes\primordialmachine\math\points\point.hpp;$(ProjectDir)includes\primordialmachine\math\points\point_default_implementation.hpp</Inputs>
+      <Outputs>$(PackageDir)includes\primordialmachine\math\points\include.hpp;$(PackageDir)includes\primordialmachine\math\points\point.hpp;$(PackageDir)includes\primordialmachine\math\points\point_default_implementation.hpp;$(PackageDir)includes\primordialmachine\math\points\equal_to_point_point.hpp;$(PackageDir)includes\primordialmachine\math\points\not_equal_to_point_point.hpp</Outputs>
+      <Inputs>$(ProjectDir)includes\primordialmachine\math\points\include.hpp;$(ProjectDir)includes\primordialmachine\math\points\point.hpp;$(ProjectDir)includes\primordialmachine\math\points\point_default_implementation.hpp;$(ProjectDir)includes\primordialmachine\math\points\equal_to_point_point.hpp;$(ProjectDir)includes\primordialmachine\math\points\not_equal_to_point_point.hpp</Inputs>
     </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -183,8 +185,8 @@ xcopy $(OutDir)*.lib $(PackageDir)libraries\ /S /E /Y</Command>
       <Command>xcopy $(ProjectDir)includes $(PackageDir)includes\ /S /E /Y
 xcopy $(OutDir)*.lib $(PackageDir)libraries\ /S /E /Y</Command>
       <Message>Create package.</Message>
-      <Outputs>$(PackageDir)includes\primordialmachine\math\points\include.hpp;$(PackageDir)includes\primordialmachine\math\points\point.hpp;$(PackageDir)includes\primordialmachine\math\points\point_default_implementation.hpp</Outputs>
-      <Inputs>$(ProjectDir)includes\primordialmachine\math\points\include.hpp;$(ProjectDir)includes\primordialmachine\math\points\point.hpp;$(ProjectDir)includes\primordialmachine\math\points\point_default_implementation.hpp</Inputs>
+      <Outputs>$(PackageDir)includes\primordialmachine\math\points\include.hpp;$(PackageDir)includes\primordialmachine\math\points\point.hpp;$(PackageDir)includes\primordialmachine\math\points\point_default_implementation.hpp;$(PackageDir)includes\primordialmachine\math\points\equal_to_point_point.hpp;$(PackageDir)includes\primordialmachine\math\points\not_equal_to_point_point.hpp</Outputs>
+      <Inputs>$(ProjectDir)includes\primordialmachine\math\points\include.hpp;$(ProjectDir)includes\primordialmachine\math\points\point.hpp;$(ProjectDir)includes\primordialmachine\math\points\point_default_implementation.hpp;$(ProjectDir)includes\primordialmachine\math\points\equal_to_point_point.hpp;$(ProjectDir)includes\primordialmachine\math\points\not_equal_to_point_point.hpp</Inputs>
     </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -228,8 +230,8 @@ xcopy $(OutDir)*.lib $(PackageDir)libraries\ /S /E /Y</Command>
       <Command>xcopy $(ProjectDir)includes $(PackageDir)includes\ /S /E /Y
 xcopy $(OutDir)*.lib $(PackageDir)libraries\ /S /E /Y</Command>
       <Message>Create package.</Message>
-      <Outputs>$(PackageDir)includes\primordialmachine\math\points\include.hpp;$(PackageDir)includes\primordialmachine\math\points\point.hpp;$(PackageDir)includes\primordialmachine\math\points\point_default_implementation.hpp</Outputs>
-      <Inputs>$(ProjectDir)includes\primordialmachine\math\points\include.hpp;$(ProjectDir)includes\primordialmachine\math\points\point.hpp;$(ProjectDir)includes\primordialmachine\math\points\point_default_implementation.hpp</Inputs>
+      <Outputs>$(PackageDir)includes\primordialmachine\math\points\include.hpp;$(PackageDir)includes\primordialmachine\math\points\point.hpp;$(PackageDir)includes\primordialmachine\math\points\point_default_implementation.hpp;$(PackageDir)includes\primordialmachine\math\points\equal_to_point_point.hpp;$(PackageDir)includes\primordialmachine\math\points\not_equal_to_point_point.hpp</Outputs>
+      <Inputs>$(ProjectDir)includes\primordialmachine\math\points\include.hpp;$(ProjectDir)includes\primordialmachine\math\points\point.hpp;$(ProjectDir)includes\primordialmachine\math\points\point_default_implementation.hpp;$(ProjectDir)includes\primordialmachine\math\points\equal_to_point_point.hpp;$(ProjectDir)includes\primordialmachine\math\points\not_equal_to_point_point.hpp</Inputs>
     </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -273,8 +275,8 @@ xcopy $(OutDir)*.lib $(PackageDir)libraries\ /S /E /Y</Command>
       <Command>xcopy $(ProjectDir)includes $(PackageDir)includes\ /S /E /Y
 xcopy $(OutDir)*.lib $(PackageDir)libraries\ /S /E /Y</Command>
       <Message>Create package.</Message>
-      <Outputs>$(PackageDir)includes\primordialmachine\math\points\include.hpp;$(PackageDir)includes\primordialmachine\math\points\point.hpp;$(PackageDir)includes\primordialmachine\math\points\point_default_implementation.hpp</Outputs>
-      <Inputs>$(ProjectDir)includes\primordialmachine\math\points\include.hpp;$(ProjectDir)includes\primordialmachine\math\points\point.hpp;$(ProjectDir)includes\primordialmachine\math\points\point_default_implementation.hpp</Inputs>
+      <Outputs>$(PackageDir)includes\primordialmachine\math\points\include.hpp;$(PackageDir)includes\primordialmachine\math\points\point.hpp;$(PackageDir)includes\primordialmachine\math\points\point_default_implementation.hpp;$(PackageDir)includes\primordialmachine\math\points\equal_to_point_point.hpp;$(PackageDir)includes\primordialmachine\math\points\not_equal_to_point_point.hpp</Outputs>
+      <Inputs>$(ProjectDir)includes\primordialmachine\math\points\include.hpp;$(ProjectDir)includes\primordialmachine\math\points\point.hpp;$(ProjectDir)includes\primordialmachine\math\points\point_default_implementation.hpp;$(ProjectDir)includes\primordialmachine\math\points\equal_to_point_point.hpp;$(ProjectDir)includes\primordialmachine\math\points\not_equal_to_point_point.hpp</Inputs>
     </CustomBuildStep>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

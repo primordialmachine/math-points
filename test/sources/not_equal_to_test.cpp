@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 //
 // Primordial Machine's Math Points Library
-// Copyright (c) 2019 Michael Heilmann
+// Copyright (c) 2017-2019 Michael Heilmann
 //
 // This software is provided 'as-is', without any express or implied warranty.
 // In no event will the authors be held liable for any damages arising from the
@@ -23,9 +23,16 @@
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#include "primordialmachine/math/points/include.hpp"
+#include "gtest/gtest.h"
 
-#include "primordialmachine/math/points/equal_to_point_point.hpp"
-#include "primordialmachine/math/points/not_equal_to_point_point.hpp"
-#include "primordialmachine/math/points/point.hpp"
-#include "primordialmachine/math/points/point_default_implementation.hpp"
+using point_traits = primordialmachine::point_traits<float, 3>;
+using point_type = primordialmachine::point<point_traits>;
+
+TEST(math_points_tests, not_equal_to_test)
+{
+  using namespace primordialmachine;
+  ASSERT_FALSE(point_type() != point_type());
+  ASSERT_FALSE(point_type(4.f, 4.f, 4.f) != point_type(4.f, 4.f, 4.f));
+  ASSERT_TRUE(point_type(4.f, 4.f, 4.f) != point_type(2.f, 2.f, 2.f));
+}

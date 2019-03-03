@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 //
 // Primordial Machine's Math Points Library
-// Copyright (c) 2019 Michael Heilmann
+// Copyright (c) 2017-2019 Michael Heilmann
 //
 // This software is provided 'as-is', without any express or implied warranty.
 // In no event will the authors be held liable for any damages arising from the
@@ -23,13 +23,16 @@
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include "primordialmachine/math/points/include.hpp"
-#include "gtest/gtest.h"
+#pragma once
 
-TEST(math_points_tests, default_constructor_test)
-{ /*Intentionally empty.*/
-}
+#include "primordialmachine/math/points/point.hpp"
+#include "primordialmachine/relational_functors/include.hpp"
 
-TEST(math_points_tests, constructor_test)
-{ /*Intentionally empty.*/
-}
+namespace primordialmachine {
+
+template<typename P>
+struct equal_to_functor<P, P, enable_if_t<is_point_v<P>>>
+  : public default_elementwise_equal_to_functor<P, P>
+{}; // struct equal_to_functor
+
+} // namespace primordialmachine

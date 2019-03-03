@@ -11,3 +11,8 @@
 
 "CanonicalPackageTypeName": "library",
 "PackageTypeName" : "Library",
+"PackageVersion" : "0.1",
+
+"RepositoryUrl" : "https://github.com/primordialmachine/math-points",
+"Open" : "{",
+"Close" : "}"

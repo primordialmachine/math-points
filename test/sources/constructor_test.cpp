@@ -23,9 +23,19 @@
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#include "primordialmachine/math/points/include.hpp"
+#include "gtest/gtest.h"
 
-#include "primordialmachine/math/points/equal_to_point_point.hpp"
-#include "primordialmachine/math/points/not_equal_to_point_point.hpp"
-#include "primordialmachine/math/points/point.hpp"
-#include "primordialmachine/math/points/point_default_implementation.hpp"
+TEST(math_points_tests, default_constructor_test)
+{
+  using namespace primordialmachine;
+  using point_type = point<point_traits<float, 3>>;
+  point_type();
+}
+
+TEST(math_points_tests, constructor_test)
+{
+  using namespace primordialmachine;
+  using point_type = point<point_traits<float, 3>>;
+  ASSERT_TRUE(point_type() == point_type(0.f, 0.f, 0.f));
+}

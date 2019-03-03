@@ -8,9 +8,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="package.props" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="sources\math_points_tests.cpp">
+    <ClCompile Include="sources\equal_to_test.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\not_equal_to_test.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\constructor_test.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
